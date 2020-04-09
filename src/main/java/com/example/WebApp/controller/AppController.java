@@ -21,6 +21,10 @@ public class AppController {
     @Autowired
     StudentRepo repo1;
 
+    @GetMapping("/auth")
+    public void login(){
+        System.out.println("in Login");
+    }
 
     @PostMapping("/saveBook")
     public String saveBook(@RequestBody Book book){
@@ -50,7 +54,7 @@ public class AppController {
         if(repo.findById(bid).isPresent()) {
             return repo.findById(bid);
         }
-        return "Enter valid Book ID";
+        return new Book();
     }
 
     @PutMapping("/updateBook/{bid}/{availability}")
@@ -81,6 +85,6 @@ public class AppController {
     public String addStudent(Student student){
         //System.out.println("hello");
         repo1.save(student);
-        return "/main/webapp/index.html";
+        return "Create ";
     }
 }

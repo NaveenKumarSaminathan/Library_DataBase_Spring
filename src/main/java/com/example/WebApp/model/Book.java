@@ -13,8 +13,7 @@ public class Book {
     private String category;
     private String availability;
 
-    public Book()
-    {}
+    public Book() {}
     public Book(int bid, String bname, String author, String category, String availability) {
         this.bid = bid;
         this.bname = bname;
