@@ -62,7 +62,7 @@ public class AppController {
         System.out.println("In Update " + bid + availability);
         if(repo.findById(bid).isPresent()) {
             repo.setFixedAvailabilityFor(bid, availability);
-//            System.out.println(repo.findById(1));
+            System.out.println(repo.findById(bid));
             return new Gson().toJson(repo.findAll());
         }
         return "Book is not available. Create a new Book";
